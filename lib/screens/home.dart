@@ -97,21 +97,23 @@ class HomePage extends StatelessWidget {
                           ),
                           child: CustomCard(
                             child: Padding(
-                              padding: const EdgeInsets.all(15.0),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    noteRunner.noteList[index].title,
-                                    style: const TextStyle(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold),
+                                padding: const EdgeInsets.all(15.0),
+                                child: ListTile(
+                                  leading: Icon(
+                                    Icons.menu_book_sharp,
+                                    color: Colors.black,
                                   ),
-                                  const Divider(),
-                                  Text(noteRunner.noteList[index].description),
-                                ],
-                              ),
-                            ),
+                                  title: Text(
+                                    noteRunner.noteList[index].title,
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  subtitle: Text(
+                                      noteRunner.noteList[index].description),
+                                )),
                           ),
                         );
                       },

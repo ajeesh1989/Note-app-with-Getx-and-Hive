@@ -63,15 +63,18 @@ class UpdateNote extends StatelessWidget {
               onPressed: () {
                 // if (formKey.currentState!.validate()) {
                 addToDB(index);
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                    backgroundColor: Colors.green,
-                    content: Text(
-                      "Note updated successfully.",
-                      style: TextStyle(color: Colors.white),
-                    ),
+                Get.snackbar(
+                  'Updated',
+                  'Note updated successfully',
+                  colorText: Colors.white,
+                  backgroundColor: Colors.grey.shade900,
+                  snackPosition: SnackPosition.BOTTOM,
+                  icon: const Icon(
+                    Icons.update,
+                    color: Colors.white,
                   ),
                 );
+
                 // } else {
                 //   return null;
                 // }
