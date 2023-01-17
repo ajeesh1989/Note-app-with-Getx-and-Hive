@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:note_app/controller/navigation_controller.dart';
 import 'package:note_app/screens/home.dart';
-import 'package:note_app/screens/settings.dart';
+import 'package:note_app/screens/about.dart';
 
 // ignore: must_be_immutable
 class NavigationPage extends StatelessWidget {

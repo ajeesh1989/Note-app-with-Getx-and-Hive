@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
@@ -8,10 +9,13 @@ class SettingsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.grey.shade900,
-        title: const Text('About NOTE app'),
+        title: Text(
+          'About - S C R I B B L E S',
+          style: GoogleFonts.amarante(),
+        ),
         centerTitle: true,
         bottom: const PreferredSize(
-            preferredSize: Size.fromHeight(20), child: Text('data')),
+            preferredSize: Size.fromHeight(20), child: Text('')),
       ),
       body: const Padding(
         padding: EdgeInsets.all(30.0),

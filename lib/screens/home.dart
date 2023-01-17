@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_cards/flutter_custom_cards.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:note_app/controller/note_controller.dart';
 import 'package:note_app/screens/add_page.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
@@ -16,7 +17,10 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         leading: const Icon(Icons.school),
         backgroundColor: Colors.grey.shade900,
-        title: const Text('NOTE app'),
+        title: Text(
+          'S C R I B B L E S',
+          style: GoogleFonts.amarante(),
+        ),
         centerTitle: true,
         bottom: const PreferredSize(
             preferredSize: Size.fromHeight(20), child: Text('data')),
@@ -99,20 +103,22 @@ class HomePage extends StatelessWidget {
                             child: Padding(
                                 padding: const EdgeInsets.all(15.0),
                                 child: ListTile(
-                                  leading: Icon(
+                                  leading: const Icon(
                                     Icons.menu_book_sharp,
                                     color: Colors.black,
                                   ),
                                   title: Text(
                                     noteRunner.noteList[index].title,
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                       color: Colors.black,
-                                      fontSize: 20,
+                                      fontSize: 23,
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
                                   subtitle: Text(
-                                      noteRunner.noteList[index].description),
+                                    noteRunner.noteList[index].description,
+                                    style: const TextStyle(fontSize: 15),
+                                  ),
                                 )),
                           ),
                         );
