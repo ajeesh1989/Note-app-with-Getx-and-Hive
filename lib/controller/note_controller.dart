@@ -12,6 +12,13 @@ class NoteController extends GetxController {
   NoteController() {
     reachNote();
   }
+  @override
+  void onInit() {
+    titleController.value.text;
+    descriptionController.value.text;
+    super.onInit();
+  }
+
   final hiveNoteName = 'hivenoteName';
   List<NoteModel> noteList = [];
 

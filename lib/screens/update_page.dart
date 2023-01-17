@@ -7,8 +7,9 @@ import 'package:note_app/screens/home.dart';
 // ignore: must_be_immutable
 class UpdateNote extends StatelessWidget {
   // ignore: use_key_in_widget_constructors
-  UpdateNote({Key? key, required this.index});
+  UpdateNote({Key? key, required this.index, required this.model});
   int index;
+  final NoteModel model;
 
   final formKey = GlobalKey<FormState>();
   final noteController = Get.put(

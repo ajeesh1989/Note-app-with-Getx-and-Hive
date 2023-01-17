@@ -42,8 +42,9 @@ class HomePage extends StatelessWidget {
                                 icon: Icons.edit_note_outlined,
                                 label: 'Edit',
                                 onPressed: ((context) {
-                                  Get.off(() => UpdateNote(
+                                  Get.to(() => UpdateNote(
                                         index: index,
+                                        model: noteRunner.noteList[index],
                                       ));
                                   noteRunner.updateNote(
                                       index, noteRunner.noteList[index]);
