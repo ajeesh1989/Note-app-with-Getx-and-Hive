@@ -24,73 +24,73 @@ class UpdateNote extends StatelessWidget {
         title: const Text('Update note'),
       ),
       body: SafeArea(
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: TextFormField(
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter your title';
-                  } else {
-                    return null;
-                  }
-                },
-                controller: noteController.titleController,
-                // ignore: prefer_const_constructors
-                decoration: InputDecoration(
-                  hintText: 'Enter your note',
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: TextFormField(
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter your description';
-                  } else {
-                    return null;
-                  }
-                },
-                controller: noteController.descriptionController,
-                decoration: const InputDecoration(
-                  hintText: 'Enter your description',
-                ),
-              ),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                // if (formKey.currentState!.validate()) {
-                addToDB(index);
-                Get.snackbar(
-                  'Updated',
-                  'Note updated successfully',
-                  colorText: Colors.white,
-                  backgroundColor: Colors.grey.shade900,
-                  snackPosition: SnackPosition.BOTTOM,
-                  icon: const Icon(
-                    Icons.update,
-                    color: Colors.white,
-                  ),
-                );
-
-                // } else {
-                //   return null;
-                // }
-              },
-              style: ButtonStyle(
-                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                  RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(18.0),
+        child: Form(
+          key: formKey,
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: TextFormField(
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your title';
+                    } else {
+                      return null;
+                    }
+                  },
+                  controller: noteController.titleController,
+                  // ignore: prefer_const_constructors
+                  decoration: InputDecoration(
+                    hintText: 'Enter your note',
                   ),
                 ),
-                backgroundColor:
-                    MaterialStateProperty.all<Color>(Colors.grey.shade900),
               ),
-              child: const Text('Update'),
-            ),
-          ],
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: TextFormField(
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your description';
+                    } else {
+                      return null;
+                    }
+                  },
+                  controller: noteController.descriptionController,
+                  decoration: const InputDecoration(
+                    hintText: 'Enter your description',
+                  ),
+                ),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  if (formKey.currentState!.validate()) {
+                    addToDB(index);
+                    Get.snackbar(
+                      'Updated',
+                      'Note updated successfully',
+                      colorText: Colors.white,
+                      backgroundColor: Colors.grey.shade900,
+                      snackPosition: SnackPosition.BOTTOM,
+                      icon: const Icon(
+                        Icons.update,
+                        color: Colors.white,
+                      ),
+                    );
+                  }
+                },
+                style: ButtonStyle(
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(18.0),
+                    ),
+                  ),
+                  backgroundColor:
+                      MaterialStateProperty.all<Color>(Colors.grey.shade900),
+                ),
+                child: const Text('Update'),
+              ),
+            ],
+          ),
         ),
       ),
     );

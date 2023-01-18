@@ -9,6 +9,8 @@ import '../model/note_model.dart';
 class NoteController extends GetxController {
   final titleController = TextEditingController();
   final descriptionController = TextEditingController();
+
+  //constructor
   NoteController() {
     reachNote();
   }
@@ -19,7 +21,9 @@ class NoteController extends GetxController {
   //   super.onInit();
   // }
 
+  //db name
   final hiveNoteName = 'hivenoteName';
+  //list type
   List<NoteModel> noteList = [];
 
   //insert to db
@@ -36,7 +40,7 @@ class NoteController extends GetxController {
     return noteDB1.values.toList();
   }
 
-  //recieve datas
+  //recieve data to list
   Future<void> reachNote() async {
     noteList.clear();
     final getallNotes = await getNote();
@@ -51,7 +55,6 @@ class NoteController extends GetxController {
     descriptionController.text = oldModel.description;
     final noteDBupdate = await Hive.openBox<NoteModel>(hiveNoteName);
     noteDBupdate.putAt(index, oldModel);
-
     reachNote();
   }
 

@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:note_app/model/note_model.dart';
 import 'package:note_app/view/bottomnavbar.dart';
-import 'package:note_app/view/home.dart';
 import 'package:note_app/view/splash.dart';
 
 Future<void> main() async {
