@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:note_app/controller/note_controller.dart';
 import 'package:note_app/model/note_model.dart';
 import 'package:note_app/view/bottomnavbar.dart';
-import 'package:note_app/view/home.dart';
 
 // ignore: camel_case_types
 class AddPage extends StatelessWidget {

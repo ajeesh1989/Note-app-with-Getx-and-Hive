@@ -17,13 +17,27 @@ class SettingsPage extends StatelessWidget {
         bottom: const PreferredSize(
             preferredSize: Size.fromHeight(20), child: Text('')),
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(30.0),
-        child: Text(
-          'Note-taking is the process of capturing information from a source or event. This usually takes the form of recording, writing, jotting, paraphrasing, sketching, labelling, outlining, and annotating. Note-taking applications enable users to type, write on their devices just as they would on paper. Many applications have their own unique features, storage, organization, and sharing capabilities, and it’s up to the user to identify which note-taking application will work best for their needs.',
-          style: TextStyle(
-            fontSize: 18,
-          ),
+      body: Padding(
+        padding: const EdgeInsets.all(30.0),
+        child: Column(
+          children: const [
+            Text(
+              'Note-taking is the process of capturing information from a source or event. This usually takes the form of recording, writing, jotting, paraphrasing, sketching, labelling, outlining, and annotating. Note-taking applications enable users to type, write on their devices just as they would on paper. Many applications have their own unique features, storage, organization, and sharing capabilities, and it’s up to the user to identify which note-taking application will work best for their needs.',
+              style: TextStyle(
+                fontSize: 16,
+              ),
+            ),
+            SizedBox(
+              height: 310,
+            ),
+            SizedBox(
+              height: 7,
+            ),
+            Text(
+              'version 1.0.0',
+              style: TextStyle(color: Colors.grey),
+            )
+          ],
         ),
       ),
     );
